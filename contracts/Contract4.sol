@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
+import "../node_modules/hardhat/console.sol";
 
 contract Game4 {
   bool public isWon;
@@ -8,6 +9,7 @@ contract Game4 {
 
   function write(address x) external {
     nested[x][msg.sender] = true;
+    console.log("msg.sender: ", msg.sender, " x: ", x);
   }
 
   function win(address y) external {
